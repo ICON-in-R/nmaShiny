@@ -8,7 +8,6 @@ Welcome to the `nmaShiny` repository! This project is designed to provide users 
 - [Installation](#installation)
 - [Running the App](#running-the-app)
 - [Using the App](#using-the-app)
-- [Learn More About Shiny](#learn-more-about-shiny)
 - [Contributing](#contributing)
 - [License](#license)
 
