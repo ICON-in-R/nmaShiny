@@ -10,9 +10,11 @@
 library(shiny)
 library(sna)
 library(NMA)
+library(bslib)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  theme = bs_theme(bootswatch = "slate"), # Apply a Bootswatch theme
   
   # Application title
   titlePanel("NMA Shiny app"),
@@ -48,8 +50,8 @@ ui <- fluidPage(
                    value = 1500, 
                    min = 1),
       
-      numericInput("nChains", 
-                   "Number of chains:", 
+      numericInput(inputId = "nChains",
+                   label = "Number of chains:", 
                    value = 2, 
                    min = 1),
       
@@ -136,7 +138,7 @@ server <- function(input, output) {
   })
   
   nma_res <- reactive({
-    NMA_run(nma_model(), save = FALSE)
+    NMA::NMA_run(nma_model(), save = FALSE)
   })
   
   output$results <- renderPrint({
